@@ -2068,7 +2068,7 @@ nav {
 
   .menu {
     position: fixed;
-    background: #131418;
+    background: #fff;
     left: 0;
     top: 0;
     height: 100vh;
@@ -2099,10 +2099,14 @@ nav {
     top: 0;
     height: 100vh;
     width: 100vw;
-    row-gap: 20px;
     z-index: 22;
     -webkit-animation: fade 0.1s linear;
             animation: fade 0.1s linear;
+  }
+
+  .menu.active .menu__item-link {
+    font-size: 2.6rem;
+    line-height: 1.5384615385;
   }
 
   .burger {
@@ -2115,7 +2119,6 @@ nav {
   }
 
   .burger.active-burger:before {
-    background: "white";
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -2126,7 +2129,6 @@ nav {
   }
 
   .burger.active-burger:after {
-    background: "white";
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -2179,10 +2181,6 @@ nav {
 
   .menu__item {
     margin-top: 15px;
-  }
-
-  .menu__item-link {
-    color: white;
   }
 }
 
