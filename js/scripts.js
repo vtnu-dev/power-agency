@@ -42,6 +42,9 @@ function burgerMenu() {
 				removeActive()
 			}
 		})
+
+		// Прятать меню при повороте экрана
+		screen.orientation.addEventListener('change', removeActive)
 	}
 
 	burger.addEventListener('click', toogleMenu)
@@ -76,15 +79,15 @@ function fixedNav() {
 const swiper = new Swiper('.swiper', {
 	loop: true,
 	spaceBetween: 100,
-   loopFillGroupWithBlank: true,
+	loopFillGroupWithBlank: true,
 	pagination: {
 		el: '.swiper-pagination',
 		clickable: true,
-      dynamicBullets: true,
+		dynamicBullets: true,
 		renderBullet: function (index, className) {
-         const images = document.querySelectorAll('.rewiews__person-img')
-         
-			return '<span class="' + className + '">' + images[index+1].outerHTML + '</span>'
+			const images = document.querySelectorAll('.rewiews__person-img')
+
+			return '<span class="' + className + '">' + images[index + 1].outerHTML + '</span>'
 
 			//return '<span class="' + className + '">' + (index + 1) + '</span>'
 		},
@@ -93,9 +96,31 @@ const swiper = new Swiper('.swiper', {
 
 /*--------------currentYear-----------------*/
 function currentYear() {
-   const footerYear = document.querySelector('.footer__year')
-   footerYear.textContent = new Date().getFullYear()};
-currentYear();
+	const footerYear = document.querySelector('.footer__year')
+	footerYear.textContent = new Date().getFullYear()
+}
+currentYear()
 
 window.addEventListener('load', currentYear)
+
+//---------------------------------------//
+
+// Navbar (show / hidden)
+const navToogle = () => {
+   const nav = document.querySelector('nav');
+
+let prevScrollpos = window.pageYOffset
+
+window.addEventListener('scroll', function () {
+	let currentScrollPos = window.pageYOffset
+	if (prevScrollpos > currentScrollPos || window.scrollY <= 70) {
+		nav.style.top = '0'
+	} else {
+		nav.style.top = '-80px'
+	}
+	prevScrollpos = currentScrollPos
+})
+}
+
+window.addEventListener('scroll', navToogle)
 
