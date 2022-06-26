@@ -1356,7 +1356,15 @@ footer {
   height: 48px;
   width: 48px;
   border-radius: 50%;
+  cursor: pointer;
   background-color: #706FE5;
+  -webkit-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.footer__social-icon:hover {
+  background-color: #5b59e1;
 }
 
 .footer__line {
@@ -1405,6 +1413,13 @@ footer {
   font-size: 1.4rem;
   line-height: 1.4285714286;
   color: rgba(255, 255, 255, 0.75);
+  -webkit-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.footer__menu-item a:hover {
+  color: white;
 }
 
 .footer__copy {
@@ -2074,7 +2089,7 @@ nav {
     background: #fff;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: none;
   }
@@ -2100,7 +2115,7 @@ nav {
             align-items: center;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     z-index: 22;
     -webkit-animation: fade 0.1s linear;

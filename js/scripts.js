@@ -44,7 +44,7 @@ function burgerMenu() {
 		})
 
 		// Прятать меню при повороте экрана
-		screen.orientation.addEventListener('change', removeActive)
+      window.addEventListener('orientationchange', removeActive)
 	}
 
 	burger.addEventListener('click', toogleMenu)
