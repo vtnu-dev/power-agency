@@ -1,0 +1,224 @@
+.rewiews {
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding: 94px 0px 50px 0px;
+
+	@include media-max(400px) {
+		padding: 30px 0px 50px 0px;
+	}
+
+	// .rewiews__figure
+
+	&__figure {
+		position: absolute;
+		max-width: 100%;
+		pointer-events: none;
+		transform: rotate(14deg);
+
+		@include media-max(768px) {
+			display: none;
+		}
+	}
+
+	&__figure-left {
+		top: 11%;
+		left: 9%;
+		animation: rotateLeft 120s ease infinite;
+	}
+
+	&__figure-right {
+		bottom: 16%;
+		right: 1%;
+		animation: rotateRight 120s ease infinite;
+	}
+
+	@keyframes rotateLeft {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes rotateRight {
+		to {
+			transform: rotate(-360deg);
+		}
+	}
+
+	&__title {
+		max-width: 336px;
+		margin: 0 auto;
+		font-weight: 800;
+		text-align: center;
+	}
+
+	// .rewiews__boxes
+
+	&__boxes {
+		margin: 75px 0px 0px 0px;
+
+		@include media-max(400px) {
+			margin: 25px 0px 0px 0px;
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		max-width: 851px;
+	}
+
+	// .rewiews__box
+
+	&__box {
+		position: relative;
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 55px;
+			height: 55px;
+		}
+
+		&::before {
+			left: 10px;
+			top: -20px;
+			background: url('../img/reviews-quota.svg') no-repeat;
+
+			@include media-max(400px) {
+				left: -14px;
+				transform: scale(0.5);
+			}
+			@include media-max(580px) {
+				transform: scale(0.7);
+			}
+		}
+
+		&::after {
+			right: 10px;
+			top: -40px;
+			background: url('../img/reviews-quota.svg') no-repeat;
+			transform: rotate(180deg);
+
+			@include media-max(580px) {
+				transform: scale(0.7) rotate(180deg);
+			}
+			@include media-max(400px) {
+				right: -14px;
+				transform: scale(0.5) rotate(180deg);
+			}
+		}
+	}
+
+	// .rewiews__text
+
+	&__text {
+		margin: 0 auto;
+		max-width: 669px;
+		@include font(1.6rem, 4.4rem);
+		text-align: center;
+		color: rgba(4, 1, 75, 0.5);
+
+		@include media-max(850px) {
+			max-width: 500px;
+		}
+		@include media-max(700px) {
+			max-width: 400px;
+		}
+
+		@include media-max(580px) {
+			@include font(1.6rem, 3.4rem);
+			padding: 0 20px;
+			max-width: 320px;
+		}
+		@include media-max(350px) {
+			@include font(1.4rem, 2.3rem);
+		}
+	}
+
+	// .rewiews__person
+
+	&__person {
+		@include flex-center-v;
+		margin: 184px 0px 0px 0px;
+
+		@include media-max(350px) {
+			@include font(1.4rem, 2.3rem);
+			margin: 130px 0px 0px 0px;
+		}
+	}
+
+	// .rewiews__person-img
+
+	&__person-img {
+		width: 103px;
+		height: 103px;
+		border-radius: 50%;
+		display: none;
+
+		@include media-max(400px) {
+			width: 73px;
+			height: 73px;
+		}
+	}
+
+	// .rewiews__person-name
+
+	&__person-name {
+		@include font(2.4rem, 3.6rem);
+		color: $color-main-1;
+		font-weight: 700;
+	}
+
+	// .rewiews__person-post
+
+	&__person-post {
+		@include font(2rem, 3rem);
+		color: rgba($color-second, 0.8);
+		font-weight: 500;
+	}
+}
+
+.swiper-pagination {
+	top: 65%;
+	transform: translateY(-50%);
+
+	@include media-max(850px) {
+		top: 70%;
+	}
+}
+
+.swiper-pagination-bullet {
+	display: inline-block;
+	width: 103px;
+	height: 103px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	color: #000;
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.2);
+
+	@include media-max(400px) {
+		width: 73px;
+		height: 73px;
+	}
+
+	.rewiews__person-img {
+		display: block;
+	}
+}
+
+.swiper-pagination-bullet-active {
+	background: rgb(255, 255, 255);
+
+	.rewiews__person-img {
+		padding: 5px;
+		border: 5px solid $color-main;
+	}
+	//transform: scale(2);
+}

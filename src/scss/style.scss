@@ -1,0 +1,76 @@
+// Global SCSS-files imports
+@import 'vars';
+@import 'reset';
+@import 'global';
+@import 'fonts';
+
+//================================================================================//
+// Mixins
+@import '_mixins/reset';
+@import '_mixins/media';
+@import '_mixins/container';
+@import '_mixins/flex';
+/*==============================================================================*/
+
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	font-style: $font-style-base;
+}
+
+// Visual hidden of elements
+.vhidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.title {
+	font-weight: 700;
+	@include font(4rem, 5.2rem);
+	color: $color-main-1;
+	letter-spacing: 0.2px;
+	text-transform: capitalize;
+}
+.subtitle {
+	font-size: 20px;
+	line-height: 36px;
+	color: $color-second;
+	mix-blend-mode: normal;
+	color: rgba($color-second, 0.8);
+}
+
+.btn {
+	@include flex-center;
+	padding: 10px 40px;
+	font-weight: 600;
+	@include font(1.8rem, 2.7rem);
+	gap: 10px;
+	background-color: $color-main;
+	color: #fff;
+	width: 181px;
+	height: 47px;
+	border-radius: 12px;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: darken($color-main, 8);
+	}
+}
+
+
+// Libs
+@import 'libs/swiper';
+@import 'block/*.scss';
